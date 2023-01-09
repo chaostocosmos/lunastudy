@@ -1,0 +1,30 @@
+Heimdal Kerberos 기준
+kdestory : kerberos ticket 삭순차로 1개만 삭제하므로 여러 티켓이 있을 경우 주의
+-alt 옵션으로 모든 티켓 삭제 가능
+
+kinit : kerberos ticket 생성
+- kinit p your_principal 형태로 default realm 외 티켓 생성이 가능 ( Principal 예시 : your_id@your_realm)
+- kinit -t your_keytab 형태로 keytab을 이용한 티켓 생성이 가능
+
+klist :
+- 만들어진 티켓 목록을 확인
+- klist -l 로 티켓 목록을 확인 가능
+- klist -vA로 모든티켓 상세내용을 확인 가능 ( macOS : klist -vA , linux : klist -aA ) 
+
+ktutil
+- keytab 생성 / 관리 기능
+- -k 로 keytab 위치 지정
+- add 로 keytab 생성
+ - p로 principal 기술
+ - e로 encript type 지정
+ - V로 version 기술
+- list로 keytab 내용 확인
+사용할 수 있는 ip 가 지정된 티켓과 달리 keytab의 경우 접근만 가능하면 쓸 수 있어 다른 서버로 옮겨 사용이 가능
+ktutil 참고 링크 : https://kb.iu.edu/d/aumh
+ 
+keytab 생성 및 keytab 이용 티켓 발급 예시 :
+ktutil -k kai-hana.keytab.mobility.hadoop add -p kai-hana@MOBILITY.HADOOP -e aes128-cts-hmac-sha1-96 -V 1
+kinit -t kai-hana.keytab.mobility.hadoop -p kai-hana@MOBILITY.HADOOP
+[출처] kerberos 명령어|작성자 Curycu
+
+
