@@ -1,0 +1,3 @@
+매직파을 찾기 위한 규칙 예시 0 string 0 magicfile 은 /etc/mag록하여
+file -m /etc/magic (filename) 으로 magic 파일을 검출하는 내완료하였으나,
+을 순회해서 조회하기가 어려움
