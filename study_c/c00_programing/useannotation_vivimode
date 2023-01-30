@@ -1,0 +1,14 @@
+
+in linux ( Ubuntu  )
+vi editor provide annotation mode
+if you want to use this,
+use this command
+1. use annotation mode
+esc -> v [ visual mode ] -> designate block -> : -> command line norm i//
+2. release annotation
+esc -> v [ visual mode ] -> designate block -> : -> command lint norm 2x 
+
+2x -> 2 : Numbers to be continued from the beginning
+
+
+
